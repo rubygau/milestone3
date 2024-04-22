@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <head>
+        <title>Milestone 1</title>
+    </head>
+    <style>
+        body {background-color: rgb(240, 222, 222);}
+        h1   {color:rgb(0, 0, 0); text-align: center; font-family:Helvetica, Arial sans-serif}
+        div  {margin: 0 auto; color:rgb(0, 0, 0); text-align: center; font-family:Helvetica, Arial sans-serif; width:300px; padding: 20px; font-size: 16px;}
+        nav  {text-decoration: none; color:black;text-align:center; font-family:Verdana, Geneva, Tahoma, sans-serif; background-color:ghostwhite; padding-top: 10px; padding-bottom: 10px;}
+        a:visited {color:black}
+
+    </style>
+    <body>
+        <nav>
+            <a href="./index.html">HOME</a>
+            <a href="./about.html">ABOUT</a>
+            <a href="./contact.html">CONTACT</a>
+        </nav>
+    </body>
+
+    <h1>Contact Me</h1>
+    <div class="input-control">
+        </style>
+
+        <body>
+            <form id="contact-form">
+                <label for="first-name">First Name:</label><br>
+                <input type="text" id="first-name" name="first-name" required><br>
+                <label for="last-name">Last Name:</label><br>
+                <input type="text" id="last-name" name="last-name" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="comments">Comments:</label><br>
+                <textarea id="comments" name="comments" required></textarea><br>
+                <button type="submit">Submit</button>
+            </form>
+
+            <script>
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault(); 
+                    alert('Thank you! Your response is being processed.');
+                    
+                });
+            </script>
+<!--creating the text of the form-->
+
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var email = document.getElementById("email").value;
+            var comments = document.getElementById("comments").value;
+
+            // Reset error messages
+            document.getElementById("firstNameError").innerHTML = "";
+            document.getElementById("lastNameError").innerHTML = "";
+            document.getElementById("emailError").innerHTML = "";
+
+            // Validate first name
+            if (firstName === "") {
+                document.getElementById("firstNameError").innerHTML = "First name is required";
+                return false;
+            }
+
+            // Validate last name
+            if (lastName === "") {
+                document.getElementById("lastNameError").innerHTML = "Last name is required";
+                return false;
+            }
+
+            // Validate email
+            if (email === "") {
+                document.getElementById("emailError").innerHTML = "Email is required";
+                return false;
+            } else if (!validateEmail(email)) {
+                document.getElementById("emailError").innerHTML = "Invalid email format";
+                return false;
+            }
+
+            // You can add more validation rules for other fields as needed
+
+            return true;
+        }
+
+        // Function to validate email format
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+    </script>
+<!--making the form validated-->
+    </div>
+</html>
+
